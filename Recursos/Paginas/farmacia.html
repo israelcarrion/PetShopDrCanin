@@ -41,7 +41,8 @@
                                 <a class="nav-link" href="./contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link carrito" href="#" data-bs-toggle="modal" data-bs-target="#carrito"><i class="bi bi-cart2"></i></a>
+                                <a class="nav-link carrito" href="#" data-bs-toggle="modal" data-bs-target="#carrito"><i
+                                        class="bi bi-cart2"></i></a>
                             </li>
                         </ul>
                         <!-- Modal -->
@@ -50,19 +51,21 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="d-flex flex-column align-items-center justify-content-center ">
-                                        <div v-if="carrito.length != 0" v-for="elemento of carrito" class="d-flex align-items-center justify-content-center contenedor-item">
+                                        <div v-if="carrito.length != 0" v-for="elemento of carrito"
+                                            class="d-flex align-items-center justify-content-center contenedor-item">
                                             <div class="justify-content-center">
-                                                <img :src="elemento.imagen" class="imagenCarrito" :alt="elemento.producto" />
+                                                <img :src="elemento.imagen" class="imagenCarrito"
+                                                    :alt="elemento.producto" />
                                             </div>
                                             <div class="modal-body text-center">
                                                 <p class="p producto" id="exampleModalLabel"> {{elemento.producto}} </p>
                                                 <p class="p">Precio: ${{elemento.precio}}</p>
                                             </div>
                                             <div class="modal-body text-center d-flex gap-4">
-                                                <p class="p" >x</p>
-                                                <p class="p" >1</p>
-                                                <p class="p" >=</p>
-                                                <p class="p" >${{elemento.precio}}</p>
+                                                <p class="p">x</p>
+                                                <p class="p">1</p>
+                                                <p class="p">=</p>
+                                                <p class="p">${{elemento.precio}}</p>
                                             </div>
                                         </div>
                                         <h3 v-else class="p-3">No tiene productos en su carrito</h3>
@@ -88,64 +91,96 @@
         <main class="d-flex flex-column">
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="../Imagenes/perro.png" class="d-block w-100" alt="perro">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../Imagenes/conejo.jpg" class="d-block w-100 conejo" alt="conejo">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../Imagenes/gatosnegros.png" class="d-block w-100" alt="gatosnegros">
-                  </div>
+                    <div class="carousel-item active">
+                        <img src="../Imagenes/perro.png" class="d-block w-100" alt="perro">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Imagenes/conejo.jpg" class="d-block w-100 conejo" alt="conejo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Imagenes/gatosnegros.png" class="d-block w-100" alt="gatosnegros">
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
-           
+
             <div class="d-flex flex-column gap-4 p-3 align-items-center destacados">
                 <div>
                     <h3 class="texto-productos">Productos destacados</h3>
                     <h6 class="texto-productosparrafo">Descubrí los productos más buscados por nuestros clientes.</h6>
                 </div>
                 <div class="input-container">
-                    <input class="input" id="input-busqueda" type="search" placeholder="Ingrese el producto que desea buscar." v-model="valueInputSearch" v-on:keyup="filtroCheck" />
+                    <input class="input" id="input-busqueda" type="search"
+                        placeholder="Ingrese el producto que desea buscar." v-model="valueInputSearch"
+                        @click="filtro" />
                     <label for="input-busqueda" class="p-2">
-                        <i id="contenedor-inputbusqueda" class="bi bi-search" style="color: #FFA500"></i>
+                        <i id="contenedor-inputbusqueda" class="bi bi-search opcion-texto" style="color: #FFA500"></i>
                     </label>
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-around comprar p-2">
                 <h6 class="comprar">Selecciona para:</h6>
                 <div class="d-flex flex-column align-items-center opcion-compra">
-                    <input type="checkbox" name="" id="seleccion-gato" class="d-none" v-on:click="filtroCheck('gatos')">
+                    <input type="checkbox" name="" id="seleccion-gato" class="d-none" v-on:click="filtroCheck('gat')">
                     <i class=" fas fa-cat fa-2x" style="color: #FFA500;"></i>
                     <label for="seleccion-gato" class="opcion-texto">Gato</label>
                 </div>
                 <div class="d-flex flex-column align-items-center  opcion-compra">
-                    <input type="checkbox" name="" id="seleccion-perro" class="d-none" v-on:click="filtroCheck('perros')">
+                    <input type="checkbox" name="" id="seleccion-perro" class="d-none" v-on:click="filtroCheck('per')">
                     <i class="fa-solid fa-dog fa-2x" style="color: #FFA500;"></i>
                     <label for="seleccion-perro" class="opcion-texto">Perro</label>
                 </div>
                 <div class="d-flex flex-column align-items-center  opcion-compra">
-                    <input type="checkbox" name="" id="seleccion-perro" class="d-none" v-on:click="filtroCheck('perros')">
+                    <input type="checkbox" name="" id="seleccion-todos" class="d-none" v-on:click="filtroTodos">
                     <i class="fa-solid fa-paw fa-2x" style="color: #FFA500;"></i>
-                    <label for="seleccion-perro" class="opcion-texto">Todos</label>
+                    <label for="seleccion-todos" class="opcion-texto">Todos</label>
                 </div>
             </div>
 
-            <div class=" d-flex justify-content-center">
+            <div class=" d-flex justify-content-center align-items-center gap-5 flex-wrap p-5 ">
+                <div v-if="filtroTotal.length == 0">
+                    <div class="d-flex justify-content-center align-items-center ">
+                        <i class="bi bi-x-lg" style="margin-right: -1rem;"></i>
+                        <h5 class="alerta">No se encontraron productos que coincidan con la busqueda</h5>
+                        <div class="modal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Modal body text goes here.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="d-flex justify-content-center flex-wrap gap-5 contenedor-general">
-                    <div v-for="elemento of farmacia" class="card align-items-center" style="width: 18rem">
+                    <div v-for="elemento of filtroTotal" class="card align-items-center" style="width: 18rem">
                         <img :src="elemento.imagen" class="card-img-top" :alt="elemento.producto" />
                         <div class="card-body">
                             <h5 class="card-title">{{elemento.producto}}</h5>
-                            <p class="card-text descripcion" data-bs-toggle="modal" data-bs-target="#elemento._id" @click="eventosModal(elemento._id)">{{elemento.descripcion}}</p>
+                            <p class="card-text descripcion" data-bs-toggle="modal" data-bs-target="#elemento._id"
+                                @click="eventosModal(elemento._id)">{{elemento.descripcion}}</p>
                             <div class="d-flex flex-column align-items-center contenedorPrecio justify-content-end">
                                 <p class="text-danger" v-if="elemento.disponibles == 0">
                                     Sin Stock: {{elemento.disponibles}}
@@ -155,9 +190,13 @@
                                 </p>
                                 <div class="d-flex justify-content-beetwen gap-5 align-items-center">
                                     <p class="precio">$ {{elemento.precio}}</p>
-                                    <button class="button-62" role="button" @click="capturarId(elemento._id)"><i class="bi bi-cart2"></i>Añadir</button>
+                                    <button class="button-62" role="button" @click="capturarId(elemento._id)"><i
+                                            class="bi bi-cart2"></i>Añadir</button>
                                 </div>
                             </div>
+                        </div>
+                        <div v->
+
                         </div>
                         <!-- Modal -->
                         <div class="modal fade" id="elemento._id" tabindex="-1" aria-labelledby="exampleModalLabel"

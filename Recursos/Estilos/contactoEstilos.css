@@ -3,6 +3,32 @@
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
+main{
+  background-color: rgba(223, 210, 199, 0.322) !important;
+}
+.contenedor{
+  border: solid 2px #161615ab;
+margin-top: 1rem;
+  /* border-radius: 22px; */
+  background-color: #fdf2eb9d;
+  /* margin: 1rem; */
+  /* padding: 0rem 1rem 0rem 0rem; */
+
+}
+.texto-inicial{
+  color: #d34318af;
+  color:#da6212ab;
+  font-weight: 800;
+}
+.texto-inicial:hover{
+  color:#a95c2b;
+}
+p{
+  color: rgb(99, 98, 98);
+  font-weight: lighter 0.5rem ;
+  /* color:black;
+  font-weight:600 ; */
+}
 .navbar-nav{
     font-weight: 700;
     font-size: 1.5rem;
@@ -107,7 +133,7 @@ textarea {
 
 form {
   padding: 37.5px;
-  margin: 50px 0;
+  /* margin: 50px 0; */
 }
 
 h1 {

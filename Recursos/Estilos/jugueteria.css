@@ -40,6 +40,10 @@
 
 
 
+.carousel .d-block {
+  height: 20rem;
+  object-fit: cover;
+}
 footer{
     height: 5rem;
     color: #a95c2b;

@@ -26,7 +26,17 @@
 .carrito:hover{
     transform: scale(1.5);
 }
-
+.alerta{
+    width: 100%;
+    /* padding-right: 30px;  */
+    /* height: 3rem; */
+  padding: 2rem;
+  text-align: center;
+  color: rgb(147, 142, 142);
+  font-weight: lighter ;
+  border-top: 1px solid rgba(224, 136, 20, 0.411);
+  border-bottom: 1px solid rgba(224, 136, 20, 0.411);
+  }
 main{
     background-color: #c7baba;
 }
@@ -55,6 +65,9 @@ footer{
     .collapse{
         justify-content: end !important;
     }
+}
+.opcion-texto{
+    cursor: pointer;
 }
 
 .descripcion {

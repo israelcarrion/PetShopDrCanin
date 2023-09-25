@@ -1,3 +1,18 @@
+.texto-inicial{
+    color: #f35525;
+    font-weight: 800;
+    font-size: 3rem;
+}
+.texto-parrafo{
+ 
+}
+.texto-parrafo-inicial{
+    color: #b9b7b7;
+    font-weight: 200;
+}
+main{
+    background-color: rgba(223, 210, 199, 0.322) !important;
+}
 #app{
     display: grid;
     min-height: 100vh;
@@ -27,9 +42,9 @@
     transform: scale(1.5);
 }
 
-main{
+/* main{
     background-color: #c7baba;
-}
+} */
 
 footer{
     height: 5rem;
@@ -66,18 +81,20 @@ footer{
     justify-content: space-between;
     height: 38rem;
     width: 95%;
-    background-color:#a95c2b ;
+    background-color:#df7838 ;
     flex-direction: column;
     margin-top: 1rem;
     margin-top: 1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    background-color: #fcff82;
+    background-color: white
     /* border: 1rem black solid; */
 }
 .img-div{
     height: 50%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 .div-Faramcia--index{
     display: flex;
@@ -201,6 +218,7 @@ footer{
     }
     .text-div{
         font-size: 1.1rem;
+       text-align: justify;
     }
     .text-slogan{
         font-size: 2rem;

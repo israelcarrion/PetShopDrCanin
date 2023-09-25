@@ -32,23 +32,23 @@
                                 <a class="nav-link" href="./farmacia.html">Farmacia</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./jugueteria.html">Jugueteria</a>
+                                <a class="nav-link" href="./jugueteria.html">Juguetería</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contacto</a>
                             </li>
-                        </ul> 
+                        </ul>
                     </div>
                 </div>
             </nav>
         </header>
         <main>
-            <div class="Texto" id="Texto">
-                <p><strong>Dirección:</strong></p>
+            <div class="contenedor p-1" id="Texto">
+                <p class="texto-inicial"><strong>Dirección:</strong></p>
                 <p>Paraguay 2334 5 F, Buenos Aires, Argentina.</p>
-                <p><strong>Teléfono:</strong></p>
+                <p class="texto-inicial"><strong>Teléfono:</strong></p>
                 <p>+549 452 548 12</p>
-                <p><strong>Horario de atención tienda física:</strong></p>
+                <p class="texto-inicial"><strong>Horario de atención tienda física:</strong></p>
                 <p>Lunes: 09:00 a 21:00 Hrs.</p>
                 <p>Martes: 09:00 a 21:00 Hrs.</p>
                 <p>Miércoles: 09:00 a 21:00 Hrs.</p>
@@ -84,40 +84,43 @@
                 </div>
                 <form @submit.prevent="onSubmit" id="contact_form">
                     <div class="name">
-                      <input type="text" placeholder="Mi nombre es" v-model="form.name" required>
+                        <input type="text" placeholder="Mi nombre es:" v-model="form.name" required>
                     </div>
                     <div class="email">
-                      <input type="email" placeholder="Mi e-mail es" v-model="form.email" required>
+                        <input type="email" placeholder="Mi e-mail es:" v-model="form.email" required>
                     </div>
                     <div class="telephone">
-                        <input type="text" placeholder="Mi número es" v-model="form.telephone" @input="filterNumbers" required>
+                        <input type="text" placeholder="Mi número es:" v-model="form.telephone" @input="filterNumbers"
+                            required>
                     </div>
                     <div class="subject">
-                      <select id="subject_input" v-model="selectedSubject">
-                        <option disabled value="">Mi mascota es</option>
-                        <option>Ave</option>
-                        <option>Gato</option>
-                        <option>Perro</option>
-                        <option>Otro</option>
-                      </select>
+                        <select id="subject_input" v-model="selectedSubject">
+                            <option disabled value="">Mi mascota es:</option>
+                            <option>Ave</option>
+                            <option>Gato</option>
+                            <option>Perro</option>
+                            <option>Otro</option>
+                        </select>
                     </div>
                     <div id="other_pet" v-if="selectedSubject === 'Otro'">
-                      <label for="other_pet_input">Por favor, especifique:</label>
-                      <input type="text" id="other_pet_input">
+                        <label for="other_pet_input">Por favor, especifique:</label>
+                        <input type="text" id="other_pet_input">
                     </div>
                     <div class="message">
-                      <textarea placeholder="Quiero hablar sobre" v-model="form.message" required></textarea>
+                        <textarea placeholder="Quiero hablar sobre" v-model="form.message" required></textarea>
                     </div>
                     <div class="submit">
                         <input type="submit" value="Enviar Mensaje" id="form_button" />
                     </div>
                 </form>
-                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">¡Muchas gracias!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 Hemos recibido tu mensaje, nos pondremos en contacto pronto.
@@ -128,8 +131,8 @@
                         </div>
                     </div>
                 </div>
-                    
-                  </form>
+
+                </form>
             </div>
 
 
@@ -150,7 +153,7 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/Recursos/Scripts/contacto.js"></script>
-    <script src="/Recursos/Scripts/carrito.js" ></script>
+    <script src="/Recursos/Scripts/carrito.js"></script>
 </body>
 
 </html>

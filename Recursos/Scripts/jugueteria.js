@@ -42,7 +42,6 @@ setTimeout(() => {
             filtroBusqueda() {
                 this.modalVisible = true;
                 this.mensajeBuscando = "Buscando...";
-
                 // setTimeout(() => {
                 //     this.filtroTotal = this.filterToy.filter((juguete) => juguete.producto.toLowerCase().includes(this.valueInputSearch.toLowerCase()) || juguete.descripcion.toLowerCase().includes(this.valueInputSearch.toLowerCase()));
 
@@ -53,17 +52,7 @@ setTimeout(() => {
             filtroTodos() {
                 this.filtroTotal = this.filtroCopia
                 console.log(this.filtroTotal)
-
             },
-            // document.getElementById("btnBuscar").addEventListener("click", function () {
-            //     document.getElementById("buscando").classList.remove("hidden");
-
-            //     // Simula una búsqueda (puedes agregar tu lógica de búsqueda aquí)
-            //     setTimeout(function () {
-            //       document.getElementById("buscando").classList.add("hidden");
-            //     }, 2000); // Cambia 2000 a la cantidad de tiempo que quieras simular la búsqueda en milisegundos.
-            //   });
-
         },
 
         computed: {
