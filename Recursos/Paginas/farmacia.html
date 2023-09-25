@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../Estilos/estilos.css" />
+    <link rel="stylesheet" href="../Estilos/farmacia.css" />
+    <link rel="stylesheet" href="../Estilos/carrito.css">
+    <link rel="shortcut icon" href="../Imagenes/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>PetShop - Farmacia</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <img src="../Imagenes/logotipo.jpg" alt="logotipo" class="logotipo" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 align-items-end gap-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Farmacia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./jugueteria.html">Jugueteria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contacto.html">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link carrito" href="#" data-bs-toggle="modal" data-bs-target="#carrito"><i class="bi bi-cart2"></i></a>
+                            </li>
+                        </ul>
+                        <!-- Modal -->
+                        <div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="d-flex flex-column align-items-center justify-content-center ">
+                                        <div v-if="carrito.length != 0" v-for="elemento of carrito" class="d-flex align-items-center justify-content-center contenedor-item">
+                                            <div class="justify-content-center">
+                                                <img :src="elemento.imagen" class="imagenCarrito" :alt="elemento.producto" />
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <p class="p producto" id="exampleModalLabel"> {{elemento.producto}} </p>
+                                                <p class="p">Precio: ${{elemento.precio}}</p>
+                                            </div>
+                                            <div class="modal-body text-center d-flex gap-4">
+                                                <p class="p" >x</p>
+                                                <p class="p" >1</p>
+                                                <p class="p" >=</p>
+                                                <p class="p" >${{elemento.precio}}</p>
+                                            </div>
+                                        </div>
+                                        <h3 v-else class="p-3">No tiene productos en su carrito</h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <p class="total p">
+                                            Total: ${{total}}
+                                        </p>
+                                        <div>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Cerrar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="d-flex flex-column">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../Imagenes/perro.png" class="d-block w-100" alt="perro">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../Imagenes/conejo.jpg" class="d-block w-100 conejo" alt="conejo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../Imagenes/gatosnegros.png" class="d-block w-100" alt="gatosnegros">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+           
+            <div class="d-flex flex-column gap-4 p-3 align-items-center destacados">
+                <div>
+                    <h3 class="texto-productos">Productos destacados</h3>
+                    <h6 class="texto-productosparrafo">Descubrí los productos más buscados por nuestros clientes.</h6>
+                </div>
+                <div class="input-container">
+                    <input class="input" id="input-busqueda" type="search" placeholder="Ingrese el producto que desea buscar." v-model="valueInputSearch" v-on:keyup="filtroCheck" />
+                    <label for="input-busqueda" class="p-2">
+                        <i id="contenedor-inputbusqueda" class="bi bi-search" style="color: #FFA500"></i>
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-around comprar p-2">
+                <h6 class="comprar">Selecciona para:</h6>
+                <div class="d-flex flex-column align-items-center opcion-compra">
+                    <input type="checkbox" name="" id="seleccion-gato" class="d-none" v-on:click="filtroCheck('gatos')">
+                    <i class=" fas fa-cat fa-2x" style="color: #FFA500;"></i>
+                    <label for="seleccion-gato" class="opcion-texto">Gato</label>
+                </div>
+                <div class="d-flex flex-column align-items-center  opcion-compra">
+                    <input type="checkbox" name="" id="seleccion-perro" class="d-none" v-on:click="filtroCheck('perros')">
+                    <i class="fa-solid fa-dog fa-2x" style="color: #FFA500;"></i>
+                    <label for="seleccion-perro" class="opcion-texto">Perro</label>
+                </div>
+                <div class="d-flex flex-column align-items-center  opcion-compra">
+                    <input type="checkbox" name="" id="seleccion-perro" class="d-none" v-on:click="filtroCheck('perros')">
+                    <i class="fa-solid fa-paw fa-2x" style="color: #FFA500;"></i>
+                    <label for="seleccion-perro" class="opcion-texto">Todos</label>
+                </div>
+            </div>
+
+            <div class=" d-flex justify-content-center">
+                <div class="d-flex justify-content-center flex-wrap gap-5 contenedor-general">
+                    <div v-for="elemento of farmacia" class="card align-items-center" style="width: 18rem">
+                        <img :src="elemento.imagen" class="card-img-top" :alt="elemento.producto" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{elemento.producto}}</h5>
+                            <p class="card-text descripcion" data-bs-toggle="modal" data-bs-target="#elemento._id" @click="eventosModal(elemento._id)">{{elemento.descripcion}}</p>
+                            <div class="d-flex flex-column align-items-center contenedorPrecio justify-content-end">
+                                <p class="text-danger" v-if="elemento.disponibles == 0">
+                                    Sin Stock: {{elemento.disponibles}}
+                                </p>
+                                <p class="text-danger" v-if="elemento.disponibles < 5 && elemento.disponibles > 0 ">
+                                    Stock: {{elemento.disponibles}}
+                                </p>
+                                <div class="d-flex justify-content-beetwen gap-5 align-items-center">
+                                    <p class="precio">$ {{elemento.precio}}</p>
+                                    <button class="button-62" role="button" @click="capturarId(elemento._id)"><i class="bi bi-cart2"></i>Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="elemento._id" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-center">
+                                        <img :src="filtrados.imagen" class="card-img-top" :alt="filtrados.producto" />
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                            {{filtrados.producto}}
+                                        </h1>
+                                        <p class="descripcionModal">{{filtrados.descripcion}}</p>
+                                        <p class="precio">Precio:
+                                            ${{filtrados.precio}}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Cerrar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="d-flex justify-content-around align-items-center">
+            <div class="d-flex align-items-center resdesFooter">
+                <a class="redes"><i class="bi bi-whatsapp"></i></a>
+                <a class="redes"><i class="bi bi-facebook"></i></a>
+                <a class="redes"><i class="bi bi-instagram"></i></a>
+            </div>
+            <div>
+                <p class="p">&copy;2023 PetShop Dr. Canin</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../Scripts/farmacia.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+
+/* *{
+  border: 1px solid red;
+} */
+
+.color-fondo{
+  /* background: radial-gradient(circle at 10% 20%, rgba(240, 217, 184, 0.815) 0%, rgba(158, 152, 149, 0.726) 90%); */
+  background-color: rgb(247, 230, 220);
+}
+#app{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+.navbar-nav{
+    font-weight: 700;
+    font-size: 1.5rem;
+   
+}
+.navbar-brand{
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: fixed;
+}
+.nav-link {
+    color: #a95c2b!important;
+    margin: 0rem 0rem
+}
+.nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+.logotipo{
+    width: 12.5rem;
+}
+.carrito:hover{
+    transform: scale(1.5);
+}
+
+
+
+footer{
+    height: 5rem;
+    color: #a95c2b;
+}
+
+.p{
+    font-size: 1.3rem;
+    margin: 0rem 1rem;
+}
+
+
+.redes{
+    font-size: 2rem;
+    color: #a95c2b;
+    margin: 0rem 1rem;
+}
+.redes:hover{
+    transform: scale(1.2);
+}
+
+@media (min-width: 992px) {
+    .collapse{
+        justify-content: end !important;
+    }
+}
+.descripcion {
+    /* height: 4rem;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    height: 4.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    text-align: justify;
+    color: rgb(147, 142, 142);
+    font-weight: lighter 0.5rem ;
+    margin: 1px;
+}
+
+.card-img-top {
+    height: 15rem;
+    width: 16rem;
+    object-fit: cover;
+    padding-top: 1rem;
+}
+
+.card-title {
+    height: 3rem;
+    text-align: center;
+    border-top: 1px solid rgb(121, 64, 29);
+    margin-bottom: 0.5rem;
+    padding-top: 0.2rem;
+    color: #da6642;
+    font-weight: 800;
+
+}
+
+.modal-title{
+    color: #da6642;
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.precio {
+    margin: 0;
+    color: rgb(128, 126, 126);
+    font-weight: bold ;
+    font-size: 1.1rem;
+}
+
+.contenedorPrecio {
+    height: 5rem;
+}
+
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #da6642, #da6642);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+
+.text-danger{
+    font-weight: 500;
+}
+
+
+.descripcionModal{
+    text-align: justify;
+    color: rgb(147, 142, 142);
+    font-weight: lighter 0.5rem ;
+}
+
+
+@media (min-width: 992px) {
+.contenedor-general{
+width: 80%;
+
+} 
+}
+
+.products {
+    padding: 20px;
+  }
+  
+  .cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .carta{
+    width:20rem;
+  }
+
+  .carousel-inner{
+ height: 20rem !important;
+ object-fit: contain;
+ width: 100%;
+  }
+
+  .d-block{
+object-fit: cover;
+
+  }
+
+  .texto-productos{
+   color: #da6642;
+    font-weight: 800;
+    font-size: 3rem;
+  }
+  .texto-productosparrafo{
+    /* color: rgb(226, 182, 101);
+    font-weight: 800;
+    font-size: 1rem; */
+    color: rgb(147, 142, 142);
+    font-weight: lighter ;
+  }
+
+
+  .input-container {
+    position: relative;
+    width: 25rem;
+ 
+  }
+  
+  #input-busqueda::placeholder {
+    color: rgb(147, 142, 142);
+    font-weight: lighter ;
+  }
+  .input {
+    width: 100%;
+    padding-right: 30px; 
+    height: 3rem;
+    margin: 1rem;
+    border: 1px solid rgba(147, 142, 142, 0.411);
+  }
+  .lupa{
+font-size: 1.5rem;
+  }
+
+  #contenedor-inputbusqueda{
+    position: absolute;
+    top: 40%;
+    right: -8px; 
+    transform: translateY(-50%);
+    cursor: pointer;/
+  }
+  .input:focus {
+    outline: none; 
+    border: 1px solid #e76942af ; 
+  }
+
+  #div-cards{
+background-color: rgba(223, 210, 199, 0.322) !important;
+  }
+
+  .color-product{
+    background-color: white;
+  }
+
+  .card{
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 15%);
+  }
+
+  .texto-productos-comprar{
+    color: rgb(255, 253, 253);
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+
+  .comprar{
+    background-color: rgba(80, 60, 16, 0.753);
+    height: 6rem;
+    background-color: #af5e2bcb;
+    background-color: #d6552dee;
+    /* background-color: #af5e2bcb; */
+    background-color:#c26932f1;
+    /* background-color: #da6642 */
+  }
+
+  hr{
+        /* margin: 1rem 0; */
+        color: inherit;
+        border: 0;
+        /* border-top: var(--bs-border-width) solid; */
+        opacity: .25;
+  }
+.gato{
+  cursor: pointer;
+
+
+}
+
+.perro{
+  cursor: pointer;
+
+}
+.titulo-jugueteria{
+  color: #da6642;
+  font-weight: 800;
+  font-size: 3rem;
+  text-align: center;
+}
+.imagen-jugueteria{
+height: 100%;
+width: 100% ;
+object-fit: cover;
+}
+/* .contenedor-imagen-jugueteria{
+  width: 15rem;
+  height: 35rem;
+  object-fit: contain;
+} */
+/* .titulo-jugueteria{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 10rem
+} */
+
+.contenedor-imagen-jugueteria{
+height: 20rem;
+width: 42rem;
+}
+
+.opcion-texto{
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0;
+  cursor :pointer;
+}
+
+.alerta{
+  width: 100%;
+  /* padding-right: 30px;  */
+  /* height: 3rem; */
+padding: 2rem;
+text-align: center;
+color: rgb(147, 142, 142);
+font-weight: lighter ;
+border-top: 1px solid rgba(224, 136, 20, 0.411);
+border-bottom: 1px solid rgba(224, 136, 20, 0.411);
+}
+/* @keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.alerta {
+  animation: blink 1.5s infinite;
+} */
+
+.hidden {
+  display: none;
+}
+
+#buscando {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

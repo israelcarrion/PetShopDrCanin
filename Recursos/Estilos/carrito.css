@@ -1,0 +1,27 @@
+.imagenCarrito{
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+}
+
+.contenedor-item{
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+
+.p{
+    margin: 0;
+    font-size:medium;
+}
+
+.total{
+    width: 6rem;
+}
+
+.modal-footer{
+    justify-content: space-around !important;
+}
+
+.producto{
+    width: 10rem;
+}
