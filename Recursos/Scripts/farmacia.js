@@ -43,6 +43,7 @@ createApp({
       console.log(this.filtroTotal = this.filtroCopia)
 
     },
+    
     /*Con esta funcion capturo el id cuando le dan al boton de añadir a carrito */
     capturarId(id) {
       this.idCarrito = id;

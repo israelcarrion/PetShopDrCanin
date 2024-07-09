@@ -15,7 +15,8 @@ setTimeout(() => {
                 valueCheck: [],
                 mensajeBuscando: "",
                 modalVisible: false,
-
+                idCarrito: "",
+                carrito: [],
             };
         },
         created() {
@@ -42,10 +43,6 @@ setTimeout(() => {
             filtroBusqueda() {
                 this.modalVisible = true;
                 this.mensajeBuscando = "Buscando...";
-                // setTimeout(() => {
-                //     this.filtroTotal = this.filterToy.filter((juguete) => juguete.producto.toLowerCase().includes(this.valueInputSearch.toLowerCase()) || juguete.descripcion.toLowerCase().includes(this.valueInputSearch.toLowerCase()));
-
-                // }, 1000);
                 this.filtroTotal = this.filterToy.filter((juguete) => juguete.producto.toLowerCase().includes(this.valueInputSearch.toLowerCase())
                     || juguete.descripcion.toLowerCase().includes(this.valueInputSearch.toLowerCase()))
             },
@@ -53,6 +50,16 @@ setTimeout(() => {
                 this.filtroTotal = this.filtroCopia
                 console.log(this.filtroTotal)
             },
+
+            capturarId(id) {
+                this.idCarrito = id;
+                this.carrito.push(this.filterToy.find(e => e._id == this.idCarrito))
+                let acumulador = 0
+                this.carrito.forEach(element => {
+                  acumulador += element.precio
+                });
+                this.total = acumulador;
+              },
         },
 
         computed: {

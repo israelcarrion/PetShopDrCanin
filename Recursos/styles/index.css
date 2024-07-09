@@ -1,0 +1,150 @@
+.div-inicio {
+    align-items: center;
+    width: 95%;
+    flex-direction: column;
+    margin-top: 1rem;
+    background-color: white
+}
+
+.text-div {
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.div-text-inicio {
+    width: 85%;
+    align-items: center !important;
+}
+
+.texto-inicial {
+    color: #f35525;
+    font-weight: 800;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.img-div {
+    width: 100%;
+    object-fit: cover;
+}
+
+.texto-parrafo {
+    color: #5c2602;
+}
+
+.text-a {
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.icon-index {
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+}
+
+.div-dos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.5rem;
+}
+
+.div-a-general {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+    transition: all 0.5s ease;
+    border-radius: 0.5rem;
+}
+
+.div-icons:hover {
+    transform: scale(1.1);
+}
+
+.p-aindex {
+    height: 4.5rem;
+}
+
+.div-protips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    padding: 1rem 0rem;
+    gap: 2rem;
+}
+
+.div-tip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.div-tip:hover {
+    transform: scale(1.1);
+}
+
+.p-tips {
+    text-align: center;
+}
+
+.icon-tip {
+    height: 50px;
+    width: 50px;
+}
+
+@media screen and (min-width: 767px){
+    .div-inicio {
+        flex-direction: row;
+    }
+
+    .div-inicio-2 {
+        flex-direction: row-reverse;
+    }
+
+    .div-text-inicio {
+        padding: 0rem 3rem;
+    }
+
+    .img-div {
+        width: 50%;
+        height: 24.45rem;
+    }
+
+    .div-a-general {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}
+
+@media screen and (min-width: 993px) {
+      .div-text-inicio {
+        padding: 0rem 4rem;
+    }
+
+    .img-div {
+        width: 45%;
+    }
+
+    .div-a-general {
+        gap: 6rem;
+    }
+
+}

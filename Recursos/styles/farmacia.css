@@ -1,0 +1,274 @@
+/* Primera Sección */
+.imgCorousel {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Segunda Sección */
+.destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    gap: 1rem;
+    padding: 1rem 0rem;
+}
+
+.texto-productos {
+    color: #da6642;
+    font-weight: 800;
+    font-size: 2rem;
+    width: 90%;
+}
+
+.texto-productosparrafo {
+    color: rgb(147, 142, 142);
+    font-weight: lighter;
+    width: 90%;
+}
+
+.proDestacatos {
+    padding-left: 1rem;
+}
+
+.input-container {
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.input {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid rgba(147, 142, 142, 0.411);
+}
+
+.lupa {
+    cursor: pointer;
+    color: #da6642;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+}
+
+#input-busqueda::placeholder {
+    color: rgb(147, 142, 142);
+    font-weight: lighter;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid #e76942af;
+}
+
+
+/* Tercera Sección */
+.contenedor-tres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #c26932f1;
+    color: white;
+    padding: 2rem 0rem;
+    gap: 1.5rem;
+}
+
+.seleccion{
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+}
+
+.opcion-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opcion-texto {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.iconosBusqueda {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.fas {
+    color: #FFA500;
+}
+
+/* Cuarta Sección */
+.contenedor-general {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem 0rem;
+}
+
+.card {
+    width: 16rem;
+}
+
+.card-title {
+    height: 3.2rem;
+    text-align: center;
+    border-top: 1px solid #79401d;
+    padding-top: 0.2rem;
+    color: #da6642;
+    font-weight: 800;
+}
+
+.card-title:hover {
+    color: #79401d;
+}
+
+.card-img-top {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+    padding-top: 0.5rem;
+}
+
+.contenedorPrecio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 5rem;
+}
+
+.precio {
+    margin: 0;
+    color: rgb(128, 126, 126);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.modalProductos {
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .comprar {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contenedor-general {
+        width: 80%;
+    }
+
+    .input-container {
+        width: 40%;
+    }
+
+    .seleccion {
+        width: 90%;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .iconosBusqueda {
+        padding-right: 10%;
+    }
+
+    .contenedor-tres {
+        flex-direction: row;
+    }
+
+    .opcion-compra {
+        font-size: 1.4rem;
+    }
+
+    .texto-productos{
+        font-size: 3rem;
+        width: 100%;
+    }
+
+    .texto-productosparrafo {
+        width: 100%;
+        font-size: 1.3rem;
+
+    }
+}
+
+.alerta {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    color: rgb(147, 142, 142);
+    font-weight: lighter;
+    border-top: 1px solid #e0881469;
+    border-bottom: 1px solid #e0881469;
+}
+
+.descripcion {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    height: 4.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    text-align: justify;
+    color: rgb(147, 142, 142);
+    font-weight: lighter 0.5rem;
+}
+
+.modal-title {
+    color: #da6642;
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.text-danger {
+    font-weight: 500;
+}
+
+.descripcionModal {
+    text-align: justify;
+    color: rgb(147, 142, 142);
+    font-weight: lighter 0.5rem;
+}
+
+/* CSS */
+.button-62 {
+    background: linear-gradient(to bottom right, #da6642, #da6642);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
