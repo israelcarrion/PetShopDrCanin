@@ -156,6 +156,22 @@
   width: 90%;
 }
 
+.mensaje-central {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 1rem 2rem;
+  text-align: center;
+  border: 2px solid #026d08;
+  border-radius: 5px;
+  background-color: #038f42;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
 @media (min-width: 768px) {
   .comprar {
     flex-direction: row;

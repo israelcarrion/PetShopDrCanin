@@ -52,14 +52,14 @@
                                 <div class="modal-content">
                                     <div class="d-flex flex-column align-items-center justify-content-center ">
                                         <div v-if="carrito.length != 0" v-for="elemento of carrito"
-                                            class="d-flex align-items-center justify-content-center contenedor-item">
-                                            <div class="justify-content-center">
+                                            class="contenedor-item">
+                                            <div class="item-Uno">
                                                 <img :src="elemento.imagen" class="imagenCarrito"
                                                     :alt="elemento.producto" />
-                                            </div>
-                                            <div class="modal-body text-center">
-                                                <p class="p producto" id="exampleModalLabel"> {{elemento.producto}} </p>
-                                                <p class="p">Precio: ${{elemento.precio}}</p>
+                                                <div class="modal-body text-center">
+                                                    <p class="p producto" id="exampleModalLabel"> {{elemento.producto}} </p>
+                                                    <p class="p">Precio: ${{elemento.precio}}</p>
+                                                </div>
                                             </div>
                                             <div class="modal-body text-center d-flex gap-4">
                                                 <p class="p">x</p>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="input-container">
                     <input class="input" id="input-busqueda" type="search" placeholder="Buscar producto."
-                        v-model.lazy="valueInputSearch" v-on:keyup="filtroBusqueda"/>
+                        v-model="valueInputSearch" v-on:keyup="filtroBusqueda"/>
                     <label for="input-busqueda">
                         <i @click="filtroBusqueda" class="bi bi-search lupa"></i>
                     </label>
@@ -168,6 +168,9 @@
                                 <div class="d-flex justify-content-between gap-5 align-items-center ">
                                     <p class="precio">$ {{product.precio}}</p>
                                     <button class="button-62" role="button" @click="capturarId (product._id)"><i class="bi bi-cart2"></i>Añadir</button>
+                                </div>
+                                <div v-if="mensajeConfirmacion" class="alert alert-success mensaje-central" role="alert">
+                                    {{ mensajeConfirmacion }}
                                 </div>
                             </div>
                         </div>

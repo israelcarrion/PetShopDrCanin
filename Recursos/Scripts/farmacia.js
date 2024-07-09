@@ -12,6 +12,7 @@ createApp({
       filtroTotal: [],
       filtroCopia: [],
       valueInputSearch: "",
+      mensajeConfirmacion: "",
     };
   },
   created() {
@@ -43,8 +44,7 @@ createApp({
       console.log(this.filtroTotal = this.filtroCopia)
 
     },
-    
-    /*Con esta funcion capturo el id cuando le dan al boton de añadir a carrito */
+
     capturarId(id) {
       this.idCarrito = id;
       this.carrito.push(this.farmacia.find(e => e._id == this.idCarrito))
@@ -53,6 +53,12 @@ createApp({
         acumulador += element.precio
       });
       this.total = acumulador;
+
+      this.mensajeConfirmacion = "El producto fue añadido al carrito.";
+
+      setTimeout(() => {
+        this.mensajeConfirmacion = "";
+      }, 2000);
     },
   },
 }).mount("#app");

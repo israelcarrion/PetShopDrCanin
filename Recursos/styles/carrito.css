@@ -5,8 +5,18 @@
 }
 
 .contenedor-item{
-    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    border-bottom: 1px solid #c26932f1;
     width: 100%;
+}
+
+.item-Uno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .p{
@@ -24,4 +34,12 @@
 
 .producto{
     width: 10rem;
+    font-weight: 700;
+}
+
+@media (min-width: 500px) {
+    .contenedor-item {
+        flex-direction: row;
+        padding-left: 1.5rem;
+    }
 }
